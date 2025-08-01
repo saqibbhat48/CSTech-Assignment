@@ -1,22 +1,15 @@
-MERN Agent Dashboard
+# MERN Agent Dashboard
 A full-stack MERN (MongoDB, Express, React, Node.js) application for admin login, agent management, bulk CSV/XLSX upload, and round-robin task distribution. Modern UI powered by Tailwind CSS.
 
 🚀 Features
-Admin authentication (JWT-based, httpOnly cookie)
-
-Agent creation and management
-
-Upload and validate CSV/XLSX/Excel files
-
-Evenly distribute leads/tasks to 5 agents
-
-View all leads assigned to agents
-
-Modern responsive UI with Tailwind CSS
-
-Protected routes for admin
-
-Logout functionality for admin
+- Admin authentication (JWT-based, httpOnly cookie)
+- Agent creation and management
+- Upload and validate CSV/XLSX/Excel files
+- Evenly distribute leads/tasks to 5 agents
+- View all leads assigned to agents
+- Modern responsive UI with Tailwind CSS
+- Protected routes for admin
+- Logout functionality for admin
 
 📁 Folder Structure
 text
@@ -133,8 +126,3 @@ client/
   index.css
 📞 Contact & Support
 Author: saqibbhat48
-
-For support/questions, open an issue or request in the GitHub repo.
-
-🎉 Happy Coding!
-Copy and paste the above into your README.md file for a complete, ready-to-use project readme.
