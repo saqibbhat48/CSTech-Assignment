@@ -27,8 +27,10 @@ MongoDB running locally or MongoDB Atlas URI
 🛠 Setup Instructions
 1. Clone the Repository
 text
-git clone https://github.com/saqibbhat48/mern-agent-dashboard.git
-cd mern-agent-dashboard
+git clone https://github.com/saqibbhat48/CSTech-Assignment
+.git
+cd CSTech-Assignment
+
 2. Backend Setup
 text
 cd server
