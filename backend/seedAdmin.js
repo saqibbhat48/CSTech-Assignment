@@ -10,7 +10,7 @@ async function createUser() {
 
   const hash = await bcrypt.hash('Admin@123', 10);
   await User.create({ email: 'admin@example.com', password: hash });
-  console.log("Admin created: admin@example.com / admin123");
+  console.log("Admin created: admin@example.com / Admin1@23");
   process.exit();
 }
 
