@@ -1,22 +1,15 @@
-MERN Agent Dashboard
+# MERN Agent Dashboard
 A full-stack MERN (MongoDB, Express, React, Node.js) application for admin login, agent management, bulk CSV/XLSX upload, and round-robin task distribution. Modern UI powered by Tailwind CSS.
 
 🚀 Features
-Admin authentication (JWT-based, httpOnly cookie)
-
-Agent creation and management
-
-Upload and validate CSV/XLSX/Excel files
-
-Evenly distribute leads/tasks to 5 agents
-
-View all leads assigned to agents
-
-Modern responsive UI with Tailwind CSS
-
-Protected routes for admin
-
-Logout functionality for admin
+- Admin authentication (JWT-based, httpOnly cookie)
+- Agent creation and management
+- Upload and validate CSV/XLSX/Excel files
+- Evenly distribute leads/tasks to 5 agents
+- View all leads assigned to agents
+- Modern responsive UI with Tailwind CSS
+- Protected routes for admin
+- Logout functionality for admin
 
 📁 Folder Structure
 text
@@ -34,18 +27,20 @@ MongoDB running locally or MongoDB Atlas URI
 🛠 Setup Instructions
 1. Clone the Repository
 text
-git clone https://github.com/saqibbhat48/mern-agent-dashboard.git
-cd mern-agent-dashboard
+git clone https://github.com/saqibbhat48/CSTech-Assignment
+.git
+cd CSTech-Assignment
+
 2. Backend Setup
 text
-cd server
+cd backend
 cp .env.example .env  # Edit .env with your MongoDB URI and JWT secret if needed
 npm install
 node seedAdmin.js      # Creates admin@example.com / Admin@123
 npm run dev            # Starts backend at http://localhost:5000
 3. Frontend Setup
 text
-cd ../client
+cd ../frontend
 npm install
 npm run dev            # Starts frontend at http://localhost:5173
 4. Login as Admin
@@ -112,7 +107,7 @@ Only CSV/XLS/XLSX files are allowed for upload.
 
 🗃️ Project Structure Detail
 text
-server/
+backend/
   models/       # Mongoose models (User, Agent, Lead)
   routes/       # API route files
   controllers/  # Business logic
@@ -121,7 +116,7 @@ server/
   app.js
   server.js
 
-client/
+frontend/
   src/
     pages/      # React pages (Login, Dashboard, Agents, Upload, Leads)
     context/    # AuthContext for protected routes
@@ -133,8 +128,3 @@ client/
   index.css
 📞 Contact & Support
 Author: saqibbhat48
-
-For support/questions, open an issue or request in the GitHub repo.
-
-🎉 Happy Coding!
-Copy and paste the above into your README.md file for a complete, ready-to-use project readme.
