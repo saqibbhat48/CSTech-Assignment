@@ -35,7 +35,7 @@ router.post('/upload', auth, upload.single('file'), async (req, res) => {
     return res.status(400).json({ msg: "Invalid file type" });
   }
 
-  // ...existing code...
+
   if (!data.length) return res.status(400).json({ msg: "No valid rows" });
 
   const agents = await Agent.find({ adminId: req.user.id });
@@ -61,7 +61,7 @@ for (let i = 0; i < agentCount; i++) {
 }
   res.json({ msg: "Leads uploaded successfully" });
 })
-// ...existing code...
+
 
 // view leads by agent
 router.get('/', auth, async (req, res) => {
