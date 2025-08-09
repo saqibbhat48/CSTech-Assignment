@@ -35,28 +35,33 @@ router.post('/upload', auth, upload.single('file'), async (req, res) => {
     return res.status(400).json({ msg: "Invalid file type" });
   }
 
+  // ...existing code...
   if (!data.length) return res.status(400).json({ msg: "No valid rows" });
 
-  const agents = await Agent.find();
+  const agents = await Agent.find({ adminId: req.user.id });
 
-  const chunk = Math.floor(data.length / 5);
-  const remainder = data.length % 5;
+  
+  const agentCount = agents.length;
+const chunk = Math.floor(data.length / agentCount);
+const remainder = data.length % agentCount;
 
-  for (let i = 0; i < 5; i++) {
-    const start = i * chunk + Math.min(i, remainder);
-    const end = start + chunk + (i < remainder ? 1 : 0);
-    const slice = data.slice(start, end);
+for (let i = 0; i < agentCount; i++) {
+  const start = i * chunk + Math.min(i, remainder);
+  const end = start + chunk + (i < remainder ? 1 : 0);
 
-    const batch = slice.map(item => ({
-      ...item,
-      agentId: agents[i % agents.length]._id
-    }));
+  const batch = data.slice(start, end).map(row => ({
+    ...row,
+    agentId: agents[i]._id,
+    adminId: req.user.id
+  }));
 
+  if (batch.length) {
     await Lead.insertMany(batch);
   }
-
-  res.json({ msg: "Leads distributed" });
-});
+}
+  res.json({ msg: "Leads uploaded successfully" });
+})
+// ...existing code...
 
 // view leads by agent
 router.get('/', auth, async (req, res) => {

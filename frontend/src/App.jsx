@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Agents from "./pages/Agents";
 import Upload from "./pages/Upload";
 import Leads from "./pages/Leads";
+import Register from "./pages/Register";
 import { Toaster } from "react-hot-toast";
 
 function App() {
@@ -46,6 +47,8 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/register" element={<Register />} />
+
         </Routes>
       <Toaster/>
       </BrowserRouter>

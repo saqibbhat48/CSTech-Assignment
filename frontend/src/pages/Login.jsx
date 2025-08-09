@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { axiosInstance } from '../services/axios';
 
 const Login = () => {
-  const [email, setEmail] = useState('admin@example.com');
-  const [password, setPassword] = useState('Admin@123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -57,6 +57,15 @@ const Login = () => {
             Sign In
           </button>
         </form>
+        <div className="mt-6 text-center">
+          <span className="text-gray-600">Don't have an account?</span>
+          <button
+            onClick={() => navigate('/register')}
+            className="ml-2 text-blue-600 font-semibold hover:underline transition cursor-pointer"
+          >
+            Register
+          </button>
+        </div>
       </div>
     </div>
   );
